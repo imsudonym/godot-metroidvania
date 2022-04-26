@@ -34,3 +34,18 @@ position = Vector2( 64, 144 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64, 128 )
+
+[node name="CameraFollow" parent="Player" index="3"]
+remote_path = NodePath("../../Camera")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 64, 121 )
+current = true
+smoothing_enabled = true
+
+[node name="Terrain" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionPolygon2D" parent="Terrain"]
+polygon = PoolVector2Array( -64, 32, -64, 208, 112, 208, 160, 176, 192, 176, 192, 208, 224, 208, 240, 224, 256, 224, 256, 48, 272, 48, 272, 240, -80, 240, -80, 32 )
+
+[editable path="Player"]
